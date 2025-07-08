@@ -2,5 +2,7 @@
 
 set -euo pipefail
 
-docker build --platform=linux/amd64 -t techgnosis/airflow:4 .
-docker push techgnosis/airflow:4
+TAG=$1
+
+docker build --platform=linux/amd64 -t techgnosis/airflow:$TAG .
+docker push techgnosis/airflow:$TAG
